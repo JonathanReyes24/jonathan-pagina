@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={{url_for('static',filename='css/style.css')}}>
+</head>
+<body>
+    <nav>
+        <a href="{{url_for('home.index')}}"><img id="logo" src="{{url_for("static",filename='img/Logo3.png')}}" alt=""></a>
+        <ul>
+            <li><a class="{{'activo' if pagina == 'posts' else ''}}" href="{{url_for('posts.posts')}}">Excel Artículos</a></li>
+            <li><a class="{{'activo' if pagina == 'contacto' else ''}}" href="{{url_for('contacto.contacto')}}">Contáctanos</a></li>
+        </ul>
+        <div id="redes">
+            <a href="#" target="_blank"><img src="{{url_for('static',filename="img/tiktok.png")}}" alt=""></a>
+            <a href="https://www.facebook.com/JonathanReyesF" target="_blank"><img src="{{url_for('static',filename="img/facebook.webp")}}" alt=""></a>
+            <a href="#" target="_blank"><img src="{{url_for('static',filename="img/instagram.webp")}}" alt=""></a>
+            <a href="https://x.com/_JonathanReyesF" target="_blank"><img src="{{url_for('static',filename="img/x.png")}}" alt=""></a>
+            <a href="https://www.youtube.com/@JonathanReyesF" target="_blank"><img src="{{url_for('static',filename="img/youtube.png")}}" alt=""></a>
+        </div>
+    </nav>
+    {% block contenido %}
+    {% endblock%}
+    
+    <footer></footer>
+    {% block javascript %}
+    {% endblock %}
+    <script src="{{url_for('static',filename="js/all.js")}}"></script>
+</body>
+</html>

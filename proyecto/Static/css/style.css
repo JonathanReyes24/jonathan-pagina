@@ -1,0 +1,294 @@
+/* DISEÑO GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+}
+body{
+    background-color: #121420;
+}
+
+/* BARRA DE NAVEGACIÓN */
+nav{
+    width:100%;
+    height: 85px;
+    background-color: #11121e;
+    margin-top: 23px;
+    border-bottom: 1px solid #181a28;
+    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+}
+nav img#logo{
+    width: 200px;
+    position: absolute;
+    top: 34;
+    left: 40px;
+}
+nav ul{
+    height: 80px;
+    text-align: center;
+}
+nav ul li{
+    display:inline;
+    margin-left: 30px;
+    font-size: 20px;
+    position:relative;
+    top: 28;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    color: #8fa5d6;
+}
+nav #redes{
+    position: absolute;
+    left: 1120;
+    top: 10;
+}
+nav #redes img{
+    width: 40px;
+}
+.activo{
+    color: #e6b450;
+    border-bottom: 1px solid #e6b450;
+}
+
+/*    SLIDER        */
+#slider{
+    width: 797;
+    height: 450;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    top: 11;
+    border: 2px solid yellowgreen;
+    border-radius: 5px;
+}
+#slider #slider-contenedor{
+    width: 9000px;
+}
+#slider img{
+    width: 800px;
+    position: relative;
+    margin-left: -3;
+}
+
+/* PUBLICACIÓN INDIVIDUAL PÁGINA */
+#publicacion{
+    margin: 0 auto 150px auto;
+    width: 94%;
+}
+#encabezado-post{
+    /*border-bottom: 1px solid yellowgreen;*/
+    border-bottom: 1px solid #22223e;
+}
+#publicacion h1{
+    color: white;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+#publicacion #fecha-autor{
+    margin-bottom: 18px;
+}
+#publicacion p{
+    color: #a6a7c5;
+}
+#publicacion #post p{
+    line-height: 30px;
+}
+#encabezado-post img{
+    margin-top: 30px;
+    width: 100%;
+}
+#publicacion #post h2{
+    /*color: yellowgreen;*/
+    color:#5277bd;
+    font-size: 30px;
+    margin: 30px 0 17px 0;
+}
+
+/* LISTADO DE PUBLICACIONES */
+#grupo-posts{
+    width: 920px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+#grupo-posts #buscador{
+    padding: 20px 0;
+    border-bottom: 1px solid #181a28;
+    width: 100%;
+}
+#grupo-posts form input[type=text]{
+    width: 84%;
+    height: 45px;
+    color: #898ba0;
+    background-color: #171a34;
+    border: 1px solid #21233e;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 14px;
+}
+#grupo-posts form input[type=submit]{
+    width: 13%;
+    height: 45px;
+    color: white;
+    background-color: #272653;
+    border: 1px solid #21233e;
+    border-radius: 5px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    left:12px;
+    cursor: pointer;
+}
+#grupo-posts form input[type=submit]:hover{
+    background-color: #2d2d62;
+}
+#grupo-posts #posts .post{
+    border-bottom: 1px solid #21233e;
+    padding-bottom: 18px;
+    padding-top: 20px;
+}
+#grupo-posts #posts .post div#contenido h2{
+    color: #dbdce7;
+    font-size: 17px;
+    font-weight: normal;
+}
+#grupo-posts #posts .post div{
+    display: inline-block;
+}
+#grupo-posts #posts .post div#izquierdo{
+    width: 419px;
+}
+#grupo-posts #posts .post div#imagen-post{
+    margin-left: 70px;
+}
+#grupo-posts #posts .post div img{
+    width: 400px;
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+}
+#grupo-posts #posts .post h2{
+    margin-bottom: 0px;
+}
+#grupo-posts #posts .post button{
+    width: 90px;
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 7px;
+    background-color: #007e34;
+    color: white;
+    border-radius: 4px;
+    border:1px solid transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+#grupo-posts #posts .post button:hover{
+    background-color: #07b74e;
+}
+#grupo-posts #posts .post a{
+    text-decoration: none;
+    color: #606bae;
+    color: yellowgreen;
+}
+#grupo-posts #posts .post a:hover{
+    text-decoration: none;
+    color: #606bae;
+    color: rgb(170, 251, 8);
+}
+#grupo-posts #posts .post p{
+    color: #dbdce7;
+    margin-bottom: 10px;
+    line-height: 23px;
+}
+#grupo-posts #posts .post p span{
+    color: #63647d;
+}
+
+/* PAGINA CONTACTO */
+div#contacto{
+    width: 70%;
+    margin: 0 auto 130px auto;
+}
+div#contacto h2{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 35px;
+}
+div#contacto p{
+    color: #a6a7d1;
+    text-align: center;
+    border-bottom: 1px solid #181a28;
+    padding-bottom: 26px;
+    padding-top: 13px;
+}
+div#contacto input#nombre{
+    margin-top: 20px;
+}
+div#contacto input{
+    display: block;
+    width: 100%;
+    height: 45px;
+    background-color: #1d2043;
+    border: 1px solid #2f3453;
+    color: #b4b6de;
+    border-radius: 5px;
+    margin-bottom: 17px;
+    padding-left: 13px;
+    font-size: 15px;
+}
+div#contacto input::placeholder{
+    color: #b4b6de;
+}
+div#contacto textarea{
+    display: block;
+    width: 100%;
+    height: 200px;
+    background-color: #1d2043;
+    border: 1px solid #2f3453;
+    color: #b4b6de;
+    border-radius: 5px;
+    margin-bottom: 29px;
+    padding-left: 13px;
+    padding-top: 10px;
+    font-size: 15px;
+}
+div#contacto textarea::placeholder{
+    color: #b4b6de;
+}
+div#contacto input[type=submit]{
+    color: white;
+    background-color: #226b56;
+    width: 300px;
+    margin: 0 auto;
+    border: none;
+    height: 41px;
+    font-size: 20px;
+    cursor: pointer;
+}
+div#contacto input[type=submit]:hover{
+    background-color: #2a856b;
+}
+#mensaje-enviado{
+    margin-top: 10px;
+    border: 2px solid #e6b450;
+    border-radius: 5px;
+    font-size: 40px;
+    background-color: #007e34;
+    font-weight: bold;
+}
+div#mensaje-enviado p{
+    position: relative;
+    top:5;
+    color: #171a34;
+}
+
+/* PIE DE PÁGINA */
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: #11121e;
+    position: relative;
+    top: 18;
+}

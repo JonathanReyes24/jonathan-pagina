@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div id="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas o sugerencias? ¿Necesitas cotizar un proyecto de Excel? ¿Necesitas contactarnos? Envíanos un mensaje.</p>
+    <form action="" method="post">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+        <input type="text" id="correo" name="correo" placeholder="Correo Electrónico" required>
+        <input type="text" id="asunto" name="asunto" placeholder="Asunto" required>
+        <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
+        <input type="submit" value="Enviar Mensaje">
+    </form>
+    {% if mensaje %}
+    <div id="mensaje-enviado">
+        <p>Correo enviado correctamente</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+

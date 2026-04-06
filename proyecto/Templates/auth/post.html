@@ -1,0 +1,23 @@
+{% extends "auth/base.html" %}
+
+{% block contenido %}
+<a href="{{url_for('auth.posts')}}"><button id="regresar-post">Regresar</button></a>
+<div id="publicacion">
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="photo">Imagen Publicación</label>
+        <input type="file" id="photo" class="form-control" name="photo" {% if accion=='publicar'%} required {% endif%}>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" required {% if accion=='editar' %}value="{{post.title}}"{% endif %}>
+        <label for="info">Descripción</label>
+        <input type="text" id="info" name="info" required {% if accion=='editar' %}value="{{post.info}}"{% endif %}>
+        <label for="contenido">Contenido</label>
+        {% if accion=='editar'%} 
+        {{ ckeditor.create(value=post.content) }} 
+        {% else %}
+        {{ ckeditor.create() }}
+        {% endif %}
+        <br>
+        <input type="submit" id="Guardar" value="Guardar Publicación">
+    </form>
+</div>
+{% endblock %}

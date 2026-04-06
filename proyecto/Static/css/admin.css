@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #090915;
+    font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+}
+
+#formulario-login{
+    width: 400px;
+    height: 400px;
+    background-color: #13131e;
+    border: 1px solid #252530;
+    border-radius: 13px;
+    margin:86 auto 36 auto;
+}
+#formulario-login #campos-formulario{
+    margin-top: 25px;
+    margin-left: 20px;
+}
+#formulario-login #campos-formulario img{
+    width: 200px;
+    display: block;
+    margin: 0 auto 10 auto;
+}
+#formulario-login form label{
+    color: #59ea8a;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+#formulario-login form label#login{
+    color: white;
+    font-size: 50px;
+    margin-left: 105px;
+}
+#formulario-login form input{
+    display: block;
+    height: 50px;
+    width: 360px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 13px;
+}
+#formulario-login form input#contraseña{
+    margin-bottom: 35px;
+}
+#formulario-login form input[type=submit]{
+    color: white;
+    margin-left: 105px;
+    width: 140px;
+    height: 60px;
+    background-color: #0e47a1;
+    border: 1px solid transparent;
+    padding-left: 0;
+    cursor: pointer;
+}
+#formulario-login form input[type=submit]:hover{
+    background-color: #2b5cb2;
+}
+
+.error{
+    background-color: #ffc7ce;
+    font-size: 30px;
+    color: #9c0006;
+    text-align: center;
+    margin:0 auto;
+    border: 1px solid #9c0006;
+    border-radius: 7px;
+    width: 400px;
+    height: 40px;
+}
+
+
+/* PAGINA PUBLICACIONES*/
+#grupo-posts{
+    width: 800px;
+    margin: 0 auto;
+}
+#grupo-posts h1{
+    color: white;
+    display: inline-block;
+}
+#grupo-posts #agregar, #grupo-posts #regresar{
+    border-radius: 5px;
+    width: 200px;
+    height: 45px;
+    border: 1px solid #21233e;
+    color: white;
+    font-size:19px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 20px;
+}
+#grupo-posts #agregar{
+    background-color: #007e34;
+}
+#grupo-posts #agregar:hover{
+    background-color: #0a9443;
+}
+#grupo-posts #regresar{
+    background-color: #0e47a1;
+}
+#grupo-posts #regresar:hover{
+    background-color: #1e53a9;
+}
+#grupo-posts{
+    width: 920px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+#grupo-posts #buscador{
+    padding: 20px 0;
+    border-bottom: 1px solid #181a28;
+    width: 100%;
+}
+#grupo-posts form input[type=text]{
+    width: 84%;
+    height: 45px;
+    color: #898ba0;
+    background-color: #171a34;
+    border: 1px solid #21233e;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 14px;
+}
+#grupo-posts form input[type=submit]{
+    width: 13%;
+    height: 45px;
+    color: white;
+    background-color: #272653;
+    border: 1px solid #21233e;
+    border-radius: 5px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    left:12px;
+    cursor: pointer;
+}
+#grupo-posts form input[type=submit]:hover{
+    background-color: #2d2d62;
+}
+#grupo-posts #posts .post{
+    border-bottom: 1px solid #21233e;
+    padding-bottom: 18px;
+    padding-top: 20px;
+}
+#grupo-posts #posts .post div{
+    display: inline-block;
+}
+#grupo-posts #posts .post div#izquierdo{
+    width: 419px;
+}
+
+#grupo-posts #posts .post div#imagen-post{
+    margin-left: 70px;
+}
+#grupo-posts #posts .post div img{
+    width: 400px;
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+}
+#grupo-posts #posts .post h2{
+    margin-bottom: 13px;
+    color: yellowgreen;
+    display: inline;
+}
+#grupo-posts #posts .post div#contenido h2{
+    color: #dbdce7;
+    font-size: 17px;
+    font-weight: normal;
+}
+#grupo-posts #posts .post button{
+    width: 90px;
+    height: 40px;
+    color: white;
+    border-radius: 4px;
+    border:1px solid transparent;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+#grupo-posts #posts .post button#editar{
+    background-color: #ff8800;
+    margin-left: 20px;
+}
+#grupo-posts #posts .post button#editar:hover{
+    background-color: #f5b026;
+}
+#grupo-posts #posts .post button#eliminar{
+    background-color: #cc0001;
+}
+#grupo-posts #posts .post button#eliminar:hover{
+    background-color: #ff3548;
+}
+#grupo-posts #posts .post a{
+    text-decoration: none;
+    color: #606bae;
+    color: yellowgreen;
+}
+#grupo-posts #posts .post a:hover{
+    text-decoration: none;
+    color: #606bae;
+    color: rgb(170, 251, 8);
+}
+#grupo-posts #posts .post p{
+    color: #dbdce7;
+    margin-bottom: 10px;
+    line-height: 23px;
+}
+#grupo-posts #posts .post p span{
+    color: #63647d;
+}
+
+
+/* PÁGINA DE POST INDIVIDUAL */
+#publicacion{
+    width: 900px;
+    margin: 20 auto;
+}
+#publicacion label{
+    color: #59ea8a;
+    display: block;
+    font-size: 20px;
+}
+#publicacion input#titulo, #publicacion input#info{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-size: 17px;
+}
+#publicacion input#photo{
+    color: white;
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+#publicacion input#guardar{
+    background-color: #007e34;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    height: 45px;
+}
+#publicacion input#guardar:hover{
+    background-color: #0a9443;
+}
+#regresar-post{
+    background-color: rgb(192, 32, 32);
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 10;
+    left: 1170;
+    cursor: pointer;
+}
+#regresar-post:hover{
+    background-color: rgb(194, 58, 58);
+}
+
+/*  PÁGINA DE ADMIN  */
+#cerrar{
+    background-color: rgb(192, 32, 32);
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 10;
+    left: 1200;
+    cursor: pointer;
+}
+#cerrar:hover{
+    background-color: rgb(194, 58, 58);
+}
+
+#zona-admin{
+    width: 1200px;
+    margin: 0 auto;
+}
+#zona-admin h1{
+    color: white;
+    text-align: center;
+}
+#zona-admin #admin-pub{
+    background-color: #0e47a1;
+    width: 300px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 450px;
+    margin-top: 40px;
+}
+#zona-admin #admin-pub:hover{
+    background-color: #2757a4;
+}

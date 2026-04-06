@@ -1,0 +1,22 @@
+{% extends "auth/base.html" %}
+
+{% block contenido %}
+<div id="formulario-login">
+    <form method="post">
+        <div id="campos-formulario">
+            <label for="" id="login">LOGIN</label>
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            <input type="submit" value="Entrar">
+        </div>
+    </form>
+</div>
+{% for mensaje in get_flashed_messages() %}
+<div class="error">
+    <p>{{mensaje}}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

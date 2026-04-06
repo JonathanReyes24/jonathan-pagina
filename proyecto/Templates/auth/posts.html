@@ -1,0 +1,27 @@
+{% extends "auth/base.html" %}
+
+{% block contenido %}
+<div id="grupo-posts">
+    <h1>Publicaciones</h1>
+    <a href="{{url_for('auth.post',accion="publicar",id=0)}}"><button id="agregar">Agregar Post</button></a>
+    <a href="{{url_for('auth.admin')}}"><button id="regresar">Regresar</button></a>    
+    <div id="posts">
+        {% for post in posts | reverse %}
+        <div class="post">
+            <div id="izquierdo">
+                <h2>{{post.title}}</h2>
+                <a href="{{url_for('auth.post',accion='editar',id=post.id)}}"><button id="editar">Editar</button></a>
+                <a href="{{url_for('auth.post',accion='eliminar',id=post.id)}}"><button id="eliminar">Eliminar</button></a>
+                <div id="contenido">
+                    <p>{{((post.content[0:300] | safe)+" ...")}}</p>
+                </div>
+                <p id="autor-fecha">Por Jonathan Reyes <span>| {{post.created}}</span></p>
+            </div>
+            <div id="imagen-post">
+                <img src="{{url_for('static',filename=post.photo)}}" alt="{{post.photo}}">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

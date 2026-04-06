@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block contenido%}
+<div id="slider">
+    <div id="slider-contenedor">
+        {% for post in posts %}
+        <a href="{{url_for('posts.post',url=post.url)}}"><img src="{{url_for('static',filename=post.photo)}}" alt=""></a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}
+
+{% block javascript %}
+<script src="{{url_for('static',filename="js/index.js")}}"></script>
+{% endblock %}
