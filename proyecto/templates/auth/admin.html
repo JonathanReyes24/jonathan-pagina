@@ -1,5 +1,7 @@
 {% extends "auth/base.html" %}
 
+{% block title %}Zona Admin{% endblock%}
+
 {% block contenido %}
 <a href="{{url_for('auth.logout')}}"><button id="cerrar">Cerrar Sesión</button></a>
 <div id="zona-admin">
