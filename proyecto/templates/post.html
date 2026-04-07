@@ -3,7 +3,7 @@
 {% block contenido %}
 <div id="publicacion">
     <div id="encabezado-post">
-        <img src="{{url_for('static',filename=post.photo)}}" alt="{{post.photo}}">
+        <img src="{{post.photo}}" alt="{{post.title}}">
         <h1>{{post.title}}</h1>
         <p id="fecha-autor">Por Jonathan Reyes | {{post.created}}</p>
     </div>

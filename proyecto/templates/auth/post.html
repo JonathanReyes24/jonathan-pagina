@@ -4,8 +4,8 @@
 <a href="{{url_for('auth.posts')}}"><button id="regresar-post">Regresar</button></a>
 <div id="publicacion">
     <form action="" method="post" enctype="multipart/form-data">
-        <label for="photo">Imagen Publicación</label>
-        <input type="file" id="photo" class="form-control" name="photo" {% if accion=='publicar'%} required {% endif%}>
+        <label for="photo" >Imagen Publicación</label>
+        <input type="file" id="photo" class="form-control" name="photo" accept="image/*" {% if accion=='publicar'%} required {% endif%}>
         <label for="titulo">Título</label>
         <input type="text" id="titulo" name="titulo" required {% if accion=='editar' %}value="{{post.title}}"{% endif %}>
         <label for="info">Descripción</label>

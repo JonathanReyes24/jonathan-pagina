@@ -9,7 +9,7 @@ class Post(db.Model):
     info = db.Column(db.Text)
     content = db.Column(db.Text)
     created = db.Column(db.DateTime,nullable=False,default=datetime.utcnow)    # El tipo de dato es fecha (db.DateTime) y con su valor por default de la fecha en que se publica "datetime.utcnow"
-    photo = db.Column(db.String(200),nullable=False)
+    photo = db.Column(db.Text,nullable=False)
 
     def __init__(self,title,url,info,content,photo):
         self.title = title

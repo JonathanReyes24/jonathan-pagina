@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, session, url_for, redirec
 bpAuth =  Blueprint("auth",__name__,url_prefix="/h20f24")
 from proyecto.models import Post
 from . import db
+import cloudinary.uploader
 
 @bpAuth.before_app_request
 def load_logged_in_user():
@@ -65,6 +66,12 @@ def posts():
 
 from werkzeug.utils import secure_filename
 
+def get_public_id_from_url(url):
+    url = url.split("?")[0]
+    filename = url.rsplit("/", 1)[-1]
+    public_id = filename.split(".")[0]
+    return public_id
+
 @bpAuth.route("/post/<accion>/<int:id>",methods=("GET","POST"))
 @login_required
 def post(accion,id):
@@ -76,12 +83,16 @@ def post(accion,id):
             info = request.form.get("info")
             contenido = request.form.get("ckeditor")
             photo = request.files["photo"]
-            photo.save(f"static/media/{secure_filename(photo.filename)}")
-            photo = f"media/{secure_filename(photo.filename)}"
+            # photo.save(f"static/media/{secure_filename(photo.filename)}")
+            # photo = f"media/{secure_filename(photo.filename)}"
+            image_url = None
+            if photo:
+                upload_result = cloudinary.uploader.upload(photo)
+                image_url = upload_result.get("secure_url")
 
             post_url = Post.query.filter_by(url=url).first()
             if post_url == None:
-                post = Post(titulo,url,info,contenido,photo)
+                post = Post(titulo, url, info, contenido, image_url)
                 db.session.add(post)
                 db.session.commit()
                 return redirect(url_for('auth.posts'))
@@ -93,10 +104,18 @@ def post(accion,id):
             post.url = request.form.get("titulo").replace(" ","-").lower()
             post.info = request.form.get("info")
             post.content = request.form.get("ckeditor")
-            if request.files["photo"]:
-                photo = request.files["photo"]
-                photo.save(f"static/media/{secure_filename(photo.filename)}")
-                post.photo = f"media/{secure_filename(photo.filename)}"
+
+            photo = request.files.get("photo")
+
+            if photo and photo.filename!="":
+                # 1. Borrar imagen vieja en Cloudinary
+                if post.photo:
+                    old_public_id = get_public_id_from_url(post.photo)
+                    cloudinary.uploader.destroy(old_public_id)
+
+                # 2. Subir nueva imagen
+                upload_result = cloudinary.uploader.upload(photo)
+                post.photo = upload_result.get("secure_url")
             else:
                 post.photo = post.photo
             db.session.commit()
@@ -104,6 +123,9 @@ def post(accion,id):
 
     if accion == "eliminar":
         post = Post.query.get_or_404(id)
+        if post.photo:
+            public_id = get_public_id_from_url(post.photo)
+            cloudinary.uploader.destroy(public_id)
         db.session.delete(post)
         db.session.commit()
         return redirect(url_for('auth.posts'))

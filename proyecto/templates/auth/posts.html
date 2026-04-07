@@ -18,7 +18,7 @@
                 <p id="autor-fecha">Por Jonathan Reyes <span>| {{post.created}}</span></p>
             </div>
             <div id="imagen-post">
-                <img src="{{url_for('static',filename=post.photo)}}" alt="{{post.photo}}">
+                <img src="{{post.photo}}" alt="{{post.title}}">
             </div>
         </div>
         {% endfor %}
