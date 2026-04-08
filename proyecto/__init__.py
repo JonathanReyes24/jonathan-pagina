@@ -24,8 +24,8 @@ def create_app():
     from flask_ckeditor import CKEditor
     ckeditor = CKEditor(app)
 
-    import locale
-    locale.setlocale(locale.LC_ALL,"es_ES")
+    #import locale
+    #locale.setlocale(locale.LC_ALL,"es_ES")
 
     from proyecto.home import bpHome
     app.register_blueprint(bpHome)
