@@ -25,7 +25,10 @@ def create_app():
     ckeditor = CKEditor(app)
 
     import locale
-    locale.setlocale(locale.LC_ALL,"es_ES.UTF-8")
+    try:
+        locale.setlocale(locale.LC_ALL, "es_ES.UTF-8")
+    except locale.Error:
+        locale.setlocale(locale.LC_ALL, "")
 
     from proyecto.home import bpHome
     app.register_blueprint(bpHome)
