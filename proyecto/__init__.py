@@ -27,7 +27,7 @@ def create_app():
     import locale
     try:
         locale.setlocale(locale.LC_ALL, "es_ES.UTF-8")
-    except locale.Error:
+    except:
         locale.setlocale(locale.LC_ALL, "")
 
     from proyecto.home import bpHome
