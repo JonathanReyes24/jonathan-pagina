@@ -19,7 +19,7 @@
                 <div id="contenido">
                     <p>{{(post.content[0:300] | safe)+" ..."}}</p>
                 </div>
-                <p id="autor-fecha">Por Jonathan Reyes <span>| {{post.created}}</span></p>
+                <p id="autor-fecha">Por Jonathan Reyes <span>| {{post.created.strftime("%d de %B %Y")}}</span></p>
             </div>
             <div id="imagen-post">
                 <a href="{{url_for('posts.post',url=post.url)}}"><img src="{{post.photo}}" alt="{{post.title}}"></a>
