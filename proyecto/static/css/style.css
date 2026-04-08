@@ -8,49 +8,115 @@ body{
     background-color: #121420;
 }
 
-/* BARRA DE NAVEGACIÓN */
-nav{
-    width:100%;
-    height: 85px;
+/* NAVBAR — ESCRITORIO */
+nav {
+    max-width: 100%;
     background-color: #11121e;
-    margin-top: 23px;
     border-bottom: 1px solid #181a28;
-    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-nav img#logo{
+
+/* LOGO */
+nav img#logo {
     width: 200px;
-    position: absolute;
-    top: 34;
-    left: 40px;
 }
-nav ul{
-    height: 80px;
-    text-align: center;
+
+/* MENÚ */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
-nav ul li{
-    display:inline;
-    margin-left: 30px;
-    font-size: 20px;
-    position:relative;
-    top: 28;
-}
-nav ul li a{
-    color: white;
-    text-decoration: none;
+
+nav ul li a {
     color: #8fa5d6;
+    text-decoration: none;
+    font-size: 20px;
 }
-nav #redes{
-    position: absolute;
-    left: 1120;
-    top: 10;
-}
-nav #redes img{
-    width: 40px;
-}
-.activo{
+
+.activo {
     color: #e6b450;
     border-bottom: 1px solid #e6b450;
 }
+
+/* REDES */
+nav #redes {
+    display: flex;
+    gap: 12px;
+}
+
+nav #redes img {
+    width: 40px;
+}
+
+/* ============================
+   TABLET — Mantener estructura mientras quepa
+   ============================ */
+@media (max-width: 1024px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav img#logo {
+        width: 170px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    nav #redes img {
+        width: 32px;
+    }
+}
+
+/* ============================
+   CUANDO YA NO QUEPA (tablet estrecha)
+   ============================ */
+@media (max-width: 850px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+        padding-bottom: 20px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav #redes {
+        justify-content: center;
+    }
+}
+
+/* ============================
+   MÓVIL
+   ============================ */
+@media (max-width: 600px) {
+
+    nav img#logo {
+        width: 140px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    nav #redes img {
+        width: 28px;
+    }
+}
+
 
 /*    SLIDER        */
 #slider{
@@ -109,7 +175,7 @@ nav #redes img{
 
 /* LISTADO DE PUBLICACIONES */
 #grupo-posts{
-    width: 920px;
+    width: 67%;
     margin: 0 auto;
     margin-bottom: 150px;
 }
@@ -158,13 +224,14 @@ nav #redes img{
     display: inline-block;
 }
 #grupo-posts #posts .post div#izquierdo{
-    width: 419px;
+    width: 40%;
 }
 #grupo-posts #posts .post div#imagen-post{
     margin-left: 70px;
+    width: 51%;
 }
 #grupo-posts #posts .post div img{
-    width: 400px;
+    width: 100%;
     border: 1px solid yellowgreen;
     border-radius: 10px;
 }
@@ -172,10 +239,8 @@ nav #redes img{
     margin-bottom: 0px;
 }
 #grupo-posts #posts .post button{
-    width: 90px;
+    width: 100%;
     height: 40px;
-    margin-left: 0px;
-    margin-top: 7px;
     background-color: #007e34;
     color: white;
     border-radius: 4px;
@@ -204,6 +269,35 @@ nav #redes img{
 #grupo-posts #posts .post p span{
     color: #63647d;
 }
+
+@media (max-width: 1300px) {
+    #grupo-posts #posts .post div#izquierdo{
+        width: 100%;
+    }
+    #grupo-posts #posts .post div#imagen-post{
+        margin-left:0px;
+        width: 100%;
+    }
+    #grupo-posts #posts .post div img{
+        width: 100%;
+        border: 1px solid yellowgreen;
+        border-radius: 10px;
+    }
+    #grupo-posts #posts .post button{
+        margin-bottom:5px;
+    }
+}
+
+@media (max-width: 900px) {
+    #grupo-posts form input[type=text]{
+        width: 72%;
+    }
+    #grupo-posts form input[type=submit]{
+        width: 24%;
+    }
+}
+
+
 
 /* PAGINA CONTACTO */
 div#contacto{
@@ -283,6 +377,63 @@ div#mensaje-enviado p{
     top:5;
     color: #171a34;
 }
+/* ============================
+   CONTACTO — TABLET
+   ============================ */
+@media (max-width: 1024px) {
+
+    #contacto {
+        width: 85%;
+    }
+
+    #contacto h2 {
+        font-size: 42px;
+    }
+
+    #contacto p {
+        font-size: 18px;
+        padding: 18px 10px;
+    }
+}
+
+/* ============================
+   CONTACTO — MÓVIL
+   ============================ */
+@media (max-width: 600px) {
+
+    #contacto {
+        width: 92%;
+        margin-bottom: 80px;
+    }
+
+    #contacto h2 {
+        font-size: 32px;
+        margin-top: 25px;
+    }
+
+    #contacto p {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 15px 5px;
+    }
+
+    #contacto input,
+    #contacto textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #contacto textarea {
+        height: 160px;
+    }
+
+    #contacto input[type=submit] {
+        width: 100%;
+        font-size: 18px;
+        height: 45px;
+    }
+}
+
 
 /* PIE DE PÁGINA */
 footer{
