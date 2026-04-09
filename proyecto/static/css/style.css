@@ -296,7 +296,14 @@ nav #redes img {
         width: 24%;
     }
 }
-
+@media (max-width: 400px) {
+    #grupo-posts form input[type=text]{
+        width: 65%;
+    }
+    #grupo-posts form input[type=submit]{
+        width: 30%;
+    }
+}
 
 
 /* PAGINA CONTACTO */
