@@ -7,7 +7,7 @@
     <div id="encabezado-post">
         <img src="{{post.photo}}" alt="{{post.title}}">
         <h1>{{post.title}}</h1>
-        <p id="fecha-autor">Por Jonathan Reyes | {{post.created.strftime("%d de %B %Y")}}</p>
+        <p id="fecha-autor">Por Jonathan Reyes | {{reemplazar(post.created.strftime("%d de %B %Y"))}}</p>
     </div>
     <div id="post">
         {{post.content|safe}}
