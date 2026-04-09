@@ -354,7 +354,7 @@ div#contacto textarea::placeholder{
 div#contacto input[type=submit]{
     color: white;
     background-color: #226b56;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
     border: none;
     height: 41px;
