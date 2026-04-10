@@ -120,8 +120,7 @@ nav #redes img {
 
 /*    SLIDER        */
 #slider{
-    width: 797;
-    height: 450;
+    width: 59%;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -130,10 +129,11 @@ nav #redes img {
     border-radius: 5px;
 }
 #slider #slider-contenedor{
-    width: 9000px;
+    width: 1129%;
 }
+
 #slider img{
-    width: 800px;
+    width: 8.88889%;
     position: relative;
     margin-left: -3;
 }

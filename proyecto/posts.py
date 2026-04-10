@@ -13,6 +13,7 @@ def post(url):
     post = Post.query.filter_by(url=url).first()
     return render_template("post.html",post=post,reemplazar=reemplazar)
 
+@bpPosts.route("/",methods=["GET","POST"])
 @bpPosts.route("/posts/",methods=["GET","POST"])
 def posts():
     posts = Post.query.all()

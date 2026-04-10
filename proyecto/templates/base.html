@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav>
-        <a href="{{url_for('home.index')}}"><img id="logo" src="{{url_for("static",filename='img/Logo3.png')}}" alt="Jonathan Reyes Logo"></a>
+        <a href="{{url_for('posts.posts')}}"><img id="logo" src="{{url_for("static",filename='img/Logo3.png')}}" alt="Jonathan Reyes Logo"></a>
         <ul>
             <li><a class="{{'activo' if pagina == 'posts' else ''}}" href="{{url_for('posts.posts')}}">Excel Artículos</a></li>
             <li><a class="{{'activo' if pagina == 'contacto' else ''}}" href="{{url_for('contacto.contacto')}}">Contáctanos</a></li>

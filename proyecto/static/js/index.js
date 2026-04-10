@@ -1,5 +1,7 @@
 //                            SLIDER                         -----------------------------
 const imagenes = document.querySelectorAll("#slider img")
+let imagenTamaño = document.querySelector("#slider img").width
+document.querySelector("#slider").style.Width = imagenTamaño-3  
 
 const imagen1 = imagenes[0];
 const imagen2 = imagenes[1];
@@ -28,21 +30,21 @@ function iniciarMovimiento() {
         imagen5.style.right = movimiento5;
 
         // Si llegó a un múltiplo de 800 (800, 1600, 2400, etc.)
-        if (movimiento1 % 800 === 0) {
-            if(movimiento1 === 800){
-                movimiento1=-800*4
+        if (movimiento1 % imagenTamaño === 0) {
+            if(movimiento1 === imagenTamaño){
+                movimiento1=-imagenTamaño*4
             }
-            if(movimiento2 === 800*2){
-                movimiento2=-800*3
+            if(movimiento2 === imagenTamaño*2){
+                movimiento2=-imagenTamaño*3
             }
-            if(movimiento3 === 800*3){
-                movimiento3=-800*2
+            if(movimiento3 === imagenTamaño*3){
+                movimiento3=-imagenTamaño*2
             }
-            if(movimiento4 === 800*4){
-                movimiento4=-800*1
+            if(movimiento4 === imagenTamaño*4){
+                movimiento4=-imagenTamaño*1
             }
-            if(movimiento5 === 800*5){
-                movimiento5=-800*0
+            if(movimiento5 === imagenTamaño*5){
+                movimiento5=-imagenTamaño*0
             }
             clearInterval(intervalo); // detener movimiento
             // Pausar 3 segundos y continuar
